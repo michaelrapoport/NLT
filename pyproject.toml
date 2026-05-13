@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nlt"
+version = "0.1.0"
+description = "PRD-driven starter service for the NLT codebase."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "NLT Team" }
+]
+license = "MIT"
+keywords = ["nlt", "prd", "backlog", "http"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+nlt = "nlt.__main__:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]
